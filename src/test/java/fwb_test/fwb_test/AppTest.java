@@ -27,6 +27,7 @@ public class AppTest
 		ChromeOptions options = new ChromeOptions();
 		options.setExperimentalOption("prefs", chromePrefs);
 		options.addArguments("--no-sandbox");
+		options.setHeadless("true");
 
 		System.setProperty("webdriver.chrome.driver", "src/resources/drivers/linux/chromedriver");
 		ChromeDriver driver = new ChromeDriver();
