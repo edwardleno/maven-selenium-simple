@@ -17,12 +17,13 @@ public class AppTest
 	{
 		System.out.println ("EJL - inside Simple test");
 		
+		System.setProperty("webdriver.chrome.driver", "src/resources/drivers/mac/chromedriver");
 		ChromeDriver driver = new ChromeDriver();
 
-        driver.get("https://www.google.com");
-        WebElement p = driver.findElement(By.name("q"));
-        p.sendKeys("Selenium Java");
-        p.submit();
-        System.out.println ("EJL - title = " + driver.getTitle());
+	        driver.get("https://www.google.com");
+        	WebElement p = driver.findElement(By.name("q"));
+	        p.sendKeys("Selenium Java");
+        	p.submit();
+	        System.out.println ("EJL - title = " + driver.getTitle());
 	}
 }
