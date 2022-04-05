@@ -26,7 +26,8 @@ public class AppTest
 		chromePrefs.put("download.prompt_for_download", false);
 		ChromeOptions options = new ChromeOptions();
 		options.setExperimentalOption("prefs", chromePrefs);
-		
+		options.addArguments("--no-sandbox");
+
 		System.setProperty("webdriver.chrome.driver", "src/resources/drivers/linux/chromedriver");
 		ChromeDriver driver = new ChromeDriver();
 
