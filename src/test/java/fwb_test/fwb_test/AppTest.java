@@ -27,7 +27,7 @@ public class AppTest
 		ChromeOptions options = new ChromeOptions();
 		options.setExperimentalOption("prefs", chromePrefs);
 		
-		System.setProperty("webdriver.chrome.driver", "src/resources/drivers/mac/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "src/resources/drivers/linux/chromedriver");
 		ChromeDriver driver = new ChromeDriver();
 
 	        driver.get("https://www.google.com");
