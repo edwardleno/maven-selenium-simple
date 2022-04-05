@@ -17,6 +17,13 @@ public class AppTest
 	{
 		System.out.println ("EJL - inside Simple test");
 		
+		String downloadFilePath = System.getProperty("user.dir") + "/target";
+		HashMap<String, Object> chromePrefs = new HashMap<>();
+		chromePrefs.put("download.default_directory", downloadFilePath);
+		chromePrefs.put("download.prompt_for_download", false);
+		ChromeOptions options = new ChromeOptions();
+		options.setExperimentalOption("prefs", chromePrefs);
+		
 		System.setProperty("webdriver.chrome.driver", "src/resources/drivers/mac/chromedriver");
 		ChromeDriver driver = new ChromeDriver();
 
