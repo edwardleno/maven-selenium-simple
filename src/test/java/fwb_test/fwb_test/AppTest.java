@@ -48,7 +48,8 @@ public class AppTest
 		System.setProperty("webdriver.chrome.driver", "src/resources/drivers/linux/chromedriver");
 
 		try {
-			driver = new RemoteWebDriver(new URL("http://192.168.1.183:4444/wd/hub"), options);
+//			driver = new RemoteWebDriver(new URL("http://192.168.1.183:4444/wd/hub"), options);  // .183 for macmini
+			driver = new RemoteWebDriver(new URL("http://192.168.1.185:4444/wd/hub"), options);  // .185 for bah
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
