@@ -11,6 +11,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+
 @TestMethodOrder(OrderAnnotation.class)
 public class AppTest
 {
@@ -19,7 +22,7 @@ public class AppTest
 	public void Simple()
 	{
 		System.out.println ("EJL - inside Simple test");
-		
+/*		
 		String downloadFilePath = System.getProperty("user.dir") + "/target";
 		HashMap<String, Object> chromePrefs = new HashMap<>();
 		chromePrefs.put("download.default_directory", downloadFilePath);
@@ -37,5 +40,20 @@ public class AppTest
 	        p.sendKeys("Selenium Java");
         	p.submit();
 	        System.out.println ("EJL - title = " + driver.getTitle());
+*/
+		ChromeOptions options = new ChromeOptions();
+		System.setProperty("webdriver.chrome.driver", "src/resources/drivers/linux/chromedriver");
+
+		try {
+			driver = new RemoteWebDriver(new URL("http://192.168.1.183:4444/wd/hub"), options);
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		driver.manage().window().maximize();
+		driver.navigate().to("https://www.youtube.com/houssemdellai");
+		System.out.println("EJL");
+
 	}
 }
