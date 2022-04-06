@@ -55,8 +55,23 @@ public class AppTest
 		}
 		
 		driver.manage().window().maximize();
+		pause (10000);
 		driver.navigate().to("https://www.youtube.com/houssemdellai");
+		pause (10000);
 		System.out.println("EJL");
 
 	}
+	
+	public void pause(long millis)
+	{
+		try
+		{
+			Thread.sleep(millis);
+		} 
+		catch (InterruptedException e)
+		{
+			e.printStackTrace();
+		}
+	}
+	
 }
