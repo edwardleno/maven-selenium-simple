@@ -13,10 +13,13 @@ import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 @TestMethodOrder(OrderAnnotation.class)
 public class AppTest
 {
+	RemoteWebDriver driver;
+	
 	@Order(1)
 	@Test
 	public void Simple()
